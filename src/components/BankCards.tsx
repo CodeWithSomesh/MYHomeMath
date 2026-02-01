@@ -175,7 +175,7 @@ const BankCards: React.FC<BankCardsProps> = ({
     <div>
       <div className='flex flex-col sm:flex-row justify-between items-center mt-20'>
         <div className='flex flex-col sm:items-start mb-2 sm:mb-0'>
-          <h1 className='text-4xl font-black font-spaceGrotesk mb-2'>Featuring Bank Home Loans </h1>
+          <h1 className='text-4xl font-black font-spaceGrotesk mb-2'>Featuring Bank Housing Loans </h1>
           <Dialog>
               <DialogTrigger className='flex justify-center items-center gap-2'>
                   <h1>Do you know the Current SBR is 3.00% p.a.?</h1>
