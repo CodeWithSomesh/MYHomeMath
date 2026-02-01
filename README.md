@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://home-finance-malaysia.vercel.app" target="_blank">→ Live Demo</a>
+  <a href="https://my-home-math.vercel.app/" target="_blank">→ Live Demo</a>
 </p>
 
 ---
