@@ -209,9 +209,9 @@ export default function Home() {
             </motion.div>
 
 
-          <div className="mx-auto max-w-7xl py-6">
+          <div className="mx-auto max-w-7xl py-6 mx-4">
 
-            <BackgroundGradient className="sm:p-2 p-1">
+            <BackgroundGradient className="p-1">
             
               <Card>
                 <CardHeader className="-mb-4">
