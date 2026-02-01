@@ -431,7 +431,7 @@ const BankCards: React.FC<BankCardsProps> = ({
                   window.open(link, '_blank')
                 }
                 >
-                  Enquire Now
+                  More Details
                 </button>
               </div>
             </div>
