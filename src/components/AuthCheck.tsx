@@ -22,7 +22,7 @@ export default function AuthCheck({ children }: { children: React.ReactNode }) {
     }
     
     checkAuth()
-  }, [router])
+  }, [router, supabase])
 
   if (isLoading) {
     return <div>Loading...</div> // You can replace this with a proper loading component

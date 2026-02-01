@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Loader2 } from 'lucide-react'
@@ -26,7 +26,7 @@ const AmortizationSchedule: React.FC<AmortizationScheduleProps> = ({ loanAmount,
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  const calculateAmortizationSchedule = (): AmortizationEntry[] => {
+  const calculateAmortizationSchedule = useCallback((): AmortizationEntry[] => {
     try {
       const monthlyRate = interestRate / 100 / 12
       const totalMonths = loanTerm * 12
@@ -57,7 +57,7 @@ const AmortizationSchedule: React.FC<AmortizationScheduleProps> = ({ loanAmount,
       console.error("Error calculating amortization schedule:", error)
       throw new Error("Failed to calculate amortization schedule. Please check your input values.")
     }
-  }
+  }, [loanAmount, interestRate, loanTerm])
 
   useEffect(() => {
     setIsLoading(true)
@@ -71,7 +71,7 @@ const AmortizationSchedule: React.FC<AmortizationScheduleProps> = ({ loanAmount,
     } finally {
       setIsLoading(false)
     }
-  }, [loanAmount, interestRate, loanTerm])
+  }, [calculateAmortizationSchedule])
 
   if (isLoading) {
     return (

@@ -193,7 +193,6 @@ const MonthlyCommitmentsForms: React.FC<MonthlyCommitmentsFormsProps> = ({
   
   // Validate when yearlyIncome or otherYearlyIncome changes using Zod
   useEffect(() => {
-
     //Making sure the variables abide to the the Zod Form Schema
     const result = dynamicSchema.safeParse({
         housingLoan,
@@ -209,7 +208,8 @@ const MonthlyCommitmentsForms: React.FC<MonthlyCommitmentsFormsProps> = ({
       // Trigger form validation to show errors
       form.trigger();
     }
-  }, [housingLoan, creditCardLoan, carLoan, otherCommitmentsAmount, totalMonthlyCommitments, totalYearlyIncome]); // Dependency array
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- dynamicSchema and form are stable; only re-run when commitment values change
+  }, [housingLoan, creditCardLoan, carLoan, otherCommitmentsAmount, totalMonthlyCommitments, totalYearlyIncome])
 
   return (
     <div className="space-y-4">
